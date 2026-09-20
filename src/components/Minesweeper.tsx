@@ -1,0 +1,18 @@
+"use client";
+import {useEffect,useRef,useState} from 'react';
+import {newGame,reveal,toggleFlag,SIZE,MINES} from '@/lib/minesweeper';
+export default function Minesweeper({onClose}:{onClose:()=>void}){
+ const [game,setGame]=useState(newGame),[seconds,setSeconds]=useState(0),[flagMode,setFlagMode]=useState(false),[position,setPosition]=useState({x:0,y:0});
+ const windowRef=useRef<HTMLDivElement>(null),closeRef=useRef<HTMLButtonElement>(null),drag=useRef<{x:number;y:number;px:number;py:number}|null>(null);
+ useEffect(()=>{closeRef.current?.focus();const resize=()=>setPosition({x:0,y:0});window.addEventListener('resize',resize);return()=>window.removeEventListener('resize',resize)},[]);
+ useEffect(()=>{if(game.status!=='playing')return;const id=setInterval(()=>setSeconds(s=>Math.min(s+1,999)),1000);return()=>clearInterval(id)},[game.status]);
+ const reset=()=>{setGame(newGame());setSeconds(0)};
+ const flags=game.cells.filter(c=>c.flag).length;
+ return <div ref={windowRef} className="mine-window" role="dialog" aria-label="扫雷" style={{transform:`translate(${position.x}px,${position.y}px)`}} onKeyDown={e=>{if(e.key==='Escape'){e.stopPropagation();onClose()}}}>
+ <div className="mine-titlebar" onPointerDown={e=>{if((e.target as Element).closest('button'))return;drag.current={x:e.clientX,y:e.clientY,px:position.x,py:position.y};e.currentTarget.setPointerCapture(e.pointerId)}} onPointerMove={e=>{const d=drag.current;if(!d)return;const node=windowRef.current!,r=node.getBoundingClientRect();const x=d.px+e.clientX-d.x,y=d.py+e.clientY-d.y;setPosition({x:Math.max(position.x-r.left,Math.min(x,position.x+innerWidth-r.right)),y:Math.max(position.y-r.top,Math.min(y,position.y+innerHeight-42-r.bottom))})}} onPointerUp={()=>drag.current=null} onPointerCancel={()=>drag.current=null}><span>▧ 扫雷 / Minesweeper</span><button ref={closeRef} aria-label="关闭扫雷" onClick={onClose}>×</button></div>
+ <div className="mine-menu"><button onClick={reset}>游戏 · 重新开始</button><span>初级 / 9 × 9</span></div>
+ <div className="mine-body"><div className="mine-dashboard"><output aria-label="剩余雷数">{String(MINES-flags).padStart(3,'0')}</output><button className="mine-reset" aria-label="重新开始扫雷" onClick={reset}>{game.status==='lost'?'☹':game.status==='won'?'☻':'☺'}</button><output aria-label="游戏时间">{String(seconds).padStart(3,'0')}</output></div>
+ <div className="mine-grid" role="group" aria-label="9乘9扫雷区域">{game.cells.map((c,i)=>{const exposed=game.status==='lost'&&c.mine;const text=c.flag?'⚑':c.mine&&(c.open||exposed)?'✹':c.open&&c.near?String(c.near):'';return <button key={i} data-cell={i} data-number={c.near} className={'mine-cell'+(c.open||exposed?' is-open':'')+(game.exploded===i?' is-exploded':'')+(c.flag?' is-flagged':'')} aria-label={`第${Math.floor(i/SIZE)+1}行第${i%SIZE+1}列，${c.flag?'已插旗':c.open?(c.mine?'地雷':c.near+'个相邻雷'):'未翻开'}`} onClick={()=>setGame(g=>flagMode?toggleFlag(g,i):reveal(g,i))} onContextMenu={e=>{e.preventDefault();setGame(g=>toggleFlag(g,i))}} onKeyDown={e=>{if(e.key.toLowerCase()==='f'){e.preventDefault();setGame(g=>toggleFlag(g,i))}const d=({ArrowLeft:-1,ArrowRight:1,ArrowUp:-SIZE,ArrowDown:SIZE} as Record<string,number>)[e.key];if(d){e.preventDefault();windowRef.current?.querySelector<HTMLButtonElement>(`[data-cell="${Math.max(0,Math.min(80,i+d))}"]`)?.focus()}}}>{game.status==='lost'&&c.flag&&!c.mine?'×':text}</button>})}</div>
+ <p className="mine-status" role="status">{game.status==='won'?'胜利！所有地雷已排除。':game.status==='lost'?'踩到地雷了，再来一局吧。':game.status==='ready'?'点击任意方格开始':'进行中 · 小心脚下'}</p><div className="mine-help"><span>左键翻格 · 右键插旗</span><button aria-pressed={flagMode} onClick={()=>setFlagMode(v=>!v)}>{flagMode?'⚑ 插旗模式':'翻格模式'}</button></div>
+ </div></div>
+}

@@ -1,0 +1,1 @@
+export default function PlaceholderSections({items}:{items:string[]}){return <div className="placeholder-sections">{items.map(item=><section key={item} className="placeholder-section"><h2>{item}</h2><p className="muted text-sm mt-3">内容待添加。</p></section>)}</div>}

@@ -1,0 +1,154 @@
+[
+  {
+    "category": "recyclable",
+    "title": "草木音息：中医音疗工坊Herbal Resonance: TCM Sound Therapy Workshop",
+    "author": "陈子一、曹旭东、徐蕾、叶思婷",
+    "format": "互动装置 / 装置艺术 / 游戏化交互 / 视频",
+    "description": "一个以“声音疗愈”与“中医经络”为内核的多感官互动空间，融合触觉、听觉与视觉，将中医五音疗法转化为可触摸、可演奏的当代艺术体验。项目包含“植物乐器装置”和“物理编舞台”两组核心玩法：观众通过敲击、摇晃、摩擦自然材质乐器触发实时光影视觉，或通过彩色音乐块在轨道台上进行声音编排，在自由拼接与即兴演奏中进入身体感知与自我觉察。",
+    "media": [
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-1-1.mp4",
+        "type": "video"
+      },
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-1-2.png",
+        "type": "image"
+      },
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-1-3.png",
+        "type": "image"
+      },
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-1-4.png",
+        "type": "image"
+      },
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-1-5.png",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "category": "recyclable",
+    "title": "森息愈行Forest Breath: A Healing Journey",
+    "author": "曹旭东、姜思如、吴招峰",
+    "format": "数据可视化海报 / 视觉设计",
+    "description": "一套围绕“运动疗愈”理念展开的视觉可视化海报，以松江98路生态旅游专线为研究对象，通过线路资源、乘客行为与车内环境等数据，呈现从发现问题、分析问题到提出解决方案的完整研究路径。作品以自然清新的绿色调与有机形态组织信息，并提出“硬件—功能—服务”三级可持续发展策略，探索公共交通作为“移动疗愈平台”的可能性。",
+    "media": [
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-2-1.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-2-2.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-2-3.jpg",
+        "type": "image"
+      },
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-2-4.jpg",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "category": "dry",
+    "title": "小球的冒险The Little Ball’s Adventure",
+    "author": "曹旭东",
+    "format": "定格动画",
+    "description": "",
+    "media": [
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-3-1.mp4",
+        "type": "video"
+      }
+    ]
+  },
+  {
+    "category": "dry",
+    "title": "破茧Breaking the Cocoon",
+    "author": "定格曹旭东",
+    "format": "动画",
+    "description": "",
+    "media": [
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-4-1.mp4",
+        "type": "video"
+      }
+    ]
+  },
+  {
+    "category": "dry",
+    "title": "我的四季My Four Seasons",
+    "author": "曹旭东",
+    "format": "定格动画",
+    "description": "",
+    "media": [
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-5-1.mp4",
+        "type": "video"
+      }
+    ]
+  },
+  {
+    "category": "dry",
+    "title": "小孩Child",
+    "author": "曹旭东",
+    "format": "动画",
+    "description": "",
+    "media": [
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-6-1.mp4",
+        "type": "video"
+      }
+    ]
+  },
+  {
+    "category": "wet",
+    "title": "运动规律练习Motion Study",
+    "author": "曹旭东",
+    "format": "动画",
+    "description": "",
+    "media": [
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-7-1.mp4",
+        "type": "video"
+      }
+    ]
+  },
+  {
+    "category": "hazardous",
+    "title": "三维渲染练习3D Rendering Practice",
+    "author": "曹旭东",
+    "format": "三维渲染图",
+    "description": "",
+    "media": [
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-8-1.png",
+        "type": "image"
+      },
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-8-2.png",
+        "type": "image"
+      },
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-8-3.png",
+        "type": "image"
+      },
+      {
+        "src": "/caoxudong-digital-garden/scraps/work-8-4.png",
+        "type": "image"
+      },
+      {
+        "src": "/caoxudong-digital-garden/scraps/blender-practice-1.mp4",
+        "type": "video"
+      },
+      {
+        "src": "/caoxudong-digital-garden/scraps/blender-practice-2.mp4",
+        "type": "video"
+      }
+    ]
+  }
+]
