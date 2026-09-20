@@ -1,0 +1,19 @@
+[
+  {
+    "target": "public/story/cave-wall/film.mp4",
+    "sha256": "d7283cc26f9c5218e93b4e1ea6b990b7c80a20f5b7f2ee8fcea47ebbbe046c6b",
+    "parts": [
+      "media-parts/caoxudong-cave-wall-00.part",
+      "media-parts/caoxudong-cave-wall-01.part",
+      "media-parts/caoxudong-cave-wall-02.part",
+      "media-parts/caoxudong-cave-wall-03.part",
+      "media-parts/caoxudong-cave-wall-04.part",
+      "media-parts/caoxudong-cave-wall-05.part",
+      "media-parts/caoxudong-cave-wall-06.part",
+      "media-parts/caoxudong-cave-wall-07.part",
+      "media-parts/caoxudong-cave-wall-08.part",
+      "media-parts/caoxudong-cave-wall-09.part",
+      "media-parts/caoxudong-cave-wall-10.part"
+    ]
+  }
+]
